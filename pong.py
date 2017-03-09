@@ -6,10 +6,10 @@ class Player():
                 self.speed = 3
                 self.padWid, self.padHei = 8, 64
                 self.score = 0
-                self.scoreFont = pygame.font.Font("imagine_font.ttf", 64)
+                self.scoreFont = pygame.font.Font("freesansbold.ttf", 64)
        
         def scoring(self):
-                scoreBlit = self.scoreFont.render(str(self.score), 1, (255, 255, 255))
+                scoreBlit = self.scoreFont.render(str(self.score), 1, (255, 5, 255))
                 screen.blit(scoreBlit, (32, 16))
                 if self.score == 10:
                         print "player 1 wins!"
@@ -28,7 +28,7 @@ class Player():
                         self.y = SCR_HEI-64
        
         def draw(self):
-                pygame.draw.rect(screen, (255, 255, 255), (self.x, self.y, self.padWid, self.padHei))
+                pygame.draw.rect(screen, (60, 255, 255), (self.x, self.y, self.padWid, self.padHei))
  
 class Enemy():
         def __init__(self):
@@ -36,7 +36,7 @@ class Enemy():
                 self.speed = 3
                 self.padWid, self.padHei = 8, 64
                 self.score = 0
-                self.scoreFont = pygame.font.Font("imagine_font.ttf", 64)
+                self.scoreFont = pygame.font.Font("freesansbold.ttf", 64)
        
         def scoring(self):
                 scoreBlit = self.scoreFont.render(str(self.score), 1, (255, 255, 255))
@@ -63,8 +63,8 @@ class Enemy():
 class Ball():
         def __init__(self):
                 self.x, self.y = SCR_WID/2, SCR_HEI/2
-                self.speed_x = -3
-                self.speed_y = 3
+                self.speed_x = -4
+                self.speed_y = 4
                 self.size = 8
        
         def movement(self):
@@ -103,7 +103,7 @@ class Ball():
                 ##paddle col
  
         def draw(self):
-                pygame.draw.rect(screen, (255, 255, 255), (self.x, self.y, 8, 8))
+                pygame.draw.rect(screen, (255, 255, 255), (self.x, self.y, 10, 10))
  
 SCR_WID, SCR_HEI = 640, 480
 screen = pygame.display.set_mode((SCR_WID, SCR_HEI))
